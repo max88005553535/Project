@@ -1,0 +1,178 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c2c2c !important;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #ffcc00; /* Желтый заголовок */
+    margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #e60000; /* Красный при наведении */
+    text-decoration: underline;
+}
+
+/* Buttons */
+button {
+    background-color: #e60000; /* Красный фон */
+    color: #fff; /* Белый текст */
+    border: none;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #cc0000; /* Темнее красный */
+}
+
+/* Forms */
+form {
+    background-color: #3d3d3d; /* Серый фон формы */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 1rem auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+form input, form textarea, form select {
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+}
+form select{
+    width: 100%;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    outline: none;
+    border-color: #ff0000;
+    box-shadow: 0 0 5px #ff5050;
+}
+
+/* Tables */
+table {
+    width: 90%;
+    margin: 1rem auto;
+    border-collapse: collapse;
+    background-color: #3d3d3d;
+    color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+table th {
+    background-color: #e60000;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+table tr:hover {
+    background-color: #444;
+}
+
+/* Containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2c2c2c;
+}
+
+/* Login and Register Pages */
+.col-lg-6 {
+    background-color: #3d3d3d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    color: #f5f5f5;
+}
+
+/* Navigation and Action Links */
+div a, .action-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border: 1px solid #ffcc00;
+    border-radius: 5px;
+    color: #ffcc00;
+    transition: background 0.3s, color 0.3s;
+}
+
+div a:hover, .action-links a:hover {
+    background-color: #ffcc00;
+    color: #2c2c2c;
+}
+
+/* Pagination Links */
+div a[th\:if] {
+    display: inline-block;
+    margin: 10px 5px;
+    background-color: #e60000;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+div a[th\:if]:hover {
+    background-color: #cc0000;
+}
+
+.spezal {
+    width: 100%;
+    display: flex;           /* Включаем Flexbox */
+    justify-content: space-between; /* Распределяем элементы по краям */
+    align-items: center;     /* Выравниваем элементы по центру вертикали */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    form {
+        padding: 15px;
+    }
+    table th, table td {
+        padding: 8px;
+    }
+}

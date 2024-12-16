@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Prime</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Prime</h1>
+<div th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+  <a href="/tasks/add">Add New Task</a>
+</div>
+<div>
+  <a href="/home">Back Home</a>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Day_of_week</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Redact</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="task : ${tasks}">
+    <td th:text="${task.day}"></td>
+    <td th:text="${task.title}"></td>
+    <td th:text="${task.description}"></td>
+    <td th:text="${task.category?.categoryName}">No category</td>
+    <td>
+      <!-- Кнопка удаления -->
+      <form th:action="@{/tasks/delete/{id}(id=${task.id})}" method="post" style="display: inline;">
+        <button type="submit" onclick="return confirm('Удалить задачу?')">Удалить</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div>
+  <a th:if="${currentPage > 0}"
+     th:href="@{/tasks(page=${currentPage - 1}, size=${size}, sortBy=${sortBy}, asc=${asc}, title=${title})}">
+    Back
+  </a>
+  <a th:if="${tasks.hasNext()}"
+     th:href="@{/tasks(page=${currentPage + 1}, size=${size}, sortBy=${sortBy}, asc=${asc}, title=${title})}">
+    Next
+  </a>
+</div>
+
+</body>
+</html>

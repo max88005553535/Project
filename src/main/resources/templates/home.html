@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Prime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Piramid Prime</h1>
+<div th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+    <a href="/tasks/add">Add New Task</a>
+</div>
+<div>
+    <a href="/tasks">See Your Tasks</a>
+</div>
+
+
+</body>
+</html>
