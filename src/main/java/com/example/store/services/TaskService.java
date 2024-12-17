@@ -26,11 +26,6 @@ public class TaskService {
     @Value("${upload.dir}")
     private String uploadDir;
 
-    public Page<Task> getTasksByUser(String username, Pageable pageable) {
-        AppUser user = appUserRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
-        return tasksRepository.findByAppUser(user, pageable);
-    }
-
     public Page<Task> getTasksByUser(String username, String title, Pageable pageable) {
         AppUser user = appUserRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
         return tasksRepository.findByAppUser(user, title, pageable);
@@ -48,10 +43,6 @@ public class TaskService {
 
     public List<Categories> getCategories() {
         return categoriesRepository.findAll();
-    }
-
-    public void deleteById(Long id) {
-        tasksRepository.deleteById(id);
     }
 
 }

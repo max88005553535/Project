@@ -35,7 +35,7 @@ public class TaskController {
     @GetMapping
     public String getTasks(@AuthenticationPrincipal UserDetails userDetails, Model model,
                            @RequestParam(defaultValue = "0") int page,
-                           @RequestParam(defaultValue = "3") int size,
+                           @RequestParam(defaultValue = "5") int size,
                            @RequestParam(defaultValue = "id") String sortBy,
                            @RequestParam(defaultValue = "true") boolean asc,
                            @RequestParam(defaultValue = "%") String title) {
@@ -71,12 +71,6 @@ public class TaskController {
         task.setAppUser(user);
         taskService.addTask(user.getUsername(), task, categoryId);
         return "redirect:/home";
-    }
-
-    @PostMapping("/delete/{id}")
-    public String deleteTask(@PathVariable Long id) {
-        taskService.deleteById(id);
-        return "redirect:/tasks";
     }
 
 

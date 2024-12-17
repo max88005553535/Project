@@ -9,9 +9,17 @@
 <div th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
     <a href="/tasks/add">Add New Task</a>
 </div>
-<div>
+<div th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+    <a href="/admin">See All Tasks</a>
+</div>
+<div th:if="${#authorization.expression('hasRole(''USER'')')}">
     <a href="/tasks">See Your Tasks</a>
 </div>
+
+<form th:action="@{/logout}" method="post" style="all: unset;">
+    <button  type="submit">Logout</button>
+</form>
+
 
 
 </body>

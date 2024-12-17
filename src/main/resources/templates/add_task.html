@@ -21,13 +21,11 @@
     <option th:each="category : ${categories}" th:value="${category.categoryId}" th:text="${category.categoryName}"></option>
   </select>
 
-<!--new-->
-  <div th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
-    <label for="user">Assign to User:</label>
-    <select id="user" name="userId">
-      <option th:each="user : ${users}" th:value="${user.appUserId}" th:text="${user.username}"></option>
-    </select>
-  </div>
+
+  <label for="user">Assign to User:</label>
+  <select id="user" name="userId">
+    <option th:each="user : ${users}" th:value="${user.appUserId}" th:text="${user.username}"></option>
+  </select>
 
 
   <div class="spezal">
