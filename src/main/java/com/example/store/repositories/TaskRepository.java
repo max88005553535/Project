@@ -11,7 +11,6 @@ import org.springframework.data.repository.query.Param;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    Page<Task> findByAppUser(AppUser appUser, Pageable pageable);
     @Query("SELECT t FROM Task t WHERE t.title LIKE %:title% AND t.appUser = :user")
     Page<Task> findByAppUser(@Param("user") AppUser appUser, String title, Pageable pageable);
 }

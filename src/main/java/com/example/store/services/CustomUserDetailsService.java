@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.store.models.AppUser.Role.ADMIN;
+
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
     private final AppUserRepository appUserRepository;
@@ -24,7 +26,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
         List<GrantedAuthority> authorities = new ArrayList<>();
-        if (appUser.getUsername().equals("admin")) {
+        if (appUser.getRole().equals(ADMIN)) {
             authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         } else {
             authorities.add(new SimpleGrantedAuthority("ROLE_USER"));

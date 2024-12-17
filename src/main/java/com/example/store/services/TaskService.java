@@ -7,7 +7,6 @@ import com.example.store.repositories.AppUserRepository;
 import com.example.store.repositories.CategoriesRepository;
 import com.example.store.repositories.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -23,8 +22,6 @@ public class TaskService {
     AppUserRepository appUserRepository;
     @Autowired
     CategoriesRepository categoriesRepository;
-    @Value("${upload.dir}")
-    private String uploadDir;
 
     public Page<Task> getTasksByUser(String username, String title, Pageable pageable) {
         AppUser user = appUserRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));

@@ -1,4 +1,3 @@
-/* General Page Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #2c2c2c !important;
@@ -10,11 +9,10 @@ body {
 
 h1 {
     text-align: center;
-    color: #ffcc00; /* Желтый заголовок */
+    color: #ffcc00;
     margin-bottom: 1rem;
 }
 
-/* Links */
 a {
     color: #ffcc00;
     text-decoration: none;
@@ -22,14 +20,13 @@ a {
 }
 
 a:hover {
-    color: #e60000; /* Красный при наведении */
+    color: #e60000;
     text-decoration: underline;
 }
 
-/* Buttons */
 button {
-    background-color: #e60000; /* Красный фон */
-    color: #fff; /* Белый текст */
+    background-color: #e60000;
+    color: #fff;
     border: none;
     margin: 10px;
     padding: 10px 20px;
@@ -40,12 +37,11 @@ button {
 }
 
 button:hover {
-    background-color: #cc0000; /* Темнее красный */
+    background-color: #cc0000;
 }
 
-/* Forms */
 form {
-    background-color: #3d3d3d; /* Серый фон формы */
+    background-color: #3d3d3d;
     padding: 20px;
     border-radius: 10px;
     max-width: 500px;
@@ -79,7 +75,6 @@ form input:focus, form textarea:focus, form select:focus {
     box-shadow: 0 0 5px #ff5050;
 }
 
-/* Tables */
 table {
     width: 90%;
     margin: 1rem auto;
@@ -110,7 +105,6 @@ table tr:hover {
     background-color: #444;
 }
 
-/* Containers */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -118,7 +112,6 @@ table tr:hover {
     background-color: #2c2c2c;
 }
 
-/* Login and Register Pages */
 .col-lg-6 {
     background-color: #3d3d3d;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -126,7 +119,6 @@ table tr:hover {
     color: #f5f5f5;
 }
 
-/* Navigation and Action Links */
 div a, .action-links a {
     display: inline-block;
     margin: 10px;
@@ -142,7 +134,6 @@ div a:hover, .action-links a:hover {
     color: #2c2c2c;
 }
 
-/* Pagination Links */
 div a[th\:if] {
     display: inline-block;
     margin: 10px 5px;
@@ -159,12 +150,11 @@ div a[th\:if]:hover {
 
 .spezal {
     width: 100%;
-    display: flex;           /* Включаем Flexbox */
-    justify-content: space-between; /* Распределяем элементы по краям */
-    align-items: center;     /* Выравниваем элементы по центру вертикали */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     h1 {
         font-size: 1.5rem;

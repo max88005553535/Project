@@ -9,6 +9,8 @@ public class Task {
     private long id;
     private String day;
     private String title;
+
+    @Column(length = 1000)
     private String description;
 
     @ManyToOne
@@ -21,10 +23,6 @@ public class Task {
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getDay() {

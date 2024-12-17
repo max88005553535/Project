@@ -2,11 +2,8 @@ package com.example.store.services;
 
 import com.example.store.models.AppUser;
 import com.example.store.repositories.AppUserRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AppUserService {
@@ -16,10 +13,6 @@ public class AppUserService {
     public AppUserService(AppUserRepository appUserRepository, PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
         this.appUserRepository = appUserRepository;
-    }
-
-    public List<AppUser> getAllAppUsers(){
-        return appUserRepository.findAll();
     }
 
     public AppUser saveAppUser(AppUser appUser){
@@ -32,9 +25,5 @@ public class AppUserService {
         appUser.setPassword(passwordEncoder.encode(password));
         appUser.setRole(AppUser.Role.USER);
         return saveAppUser(appUser);
-    }
-
-    public Optional<AppUser> getAppUserByUsername(String username){
-        return appUserRepository.findByUsername(username);
     }
 }
